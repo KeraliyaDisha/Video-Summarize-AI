@@ -2,7 +2,7 @@
   "collectionName": "components_layout_features_sections",
   "info": {
     "displayName": "Features Section",
-    "description": ""
+    "description": "Description for the features section"
   },
   "options": {},
   "attributes": {

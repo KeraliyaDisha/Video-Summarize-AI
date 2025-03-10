@@ -29,7 +29,7 @@ export interface ComponentsLink extends Struct.ComponentSchema {
 export interface LayoutFeaturesSection extends Struct.ComponentSchema {
   collectionName: 'components_layout_features_sections';
   info: {
-    description: '';
+    description: 'Description for the features section';
     displayName: 'Features Section';
   };
   attributes: {

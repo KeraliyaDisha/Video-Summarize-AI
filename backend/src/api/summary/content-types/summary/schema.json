@@ -5,7 +5,7 @@
     "singularName": "summary",
     "pluralName": "summaries",
     "displayName": "Summary",
-    "description": ""
+    "description": "This is the summary content type"
   },
   "options": {
     "draftAndPublish": true

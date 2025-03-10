@@ -437,7 +437,7 @@ export interface ApiHomePageHomePage extends Struct.SingleTypeSchema {
 export interface ApiSummarySummary extends Struct.CollectionTypeSchema {
   collectionName: 'summaries';
   info: {
-    description: '';
+    description: 'This is the summary content type';
     displayName: 'Summary';
     pluralName: 'summaries';
     singularName: 'summary';

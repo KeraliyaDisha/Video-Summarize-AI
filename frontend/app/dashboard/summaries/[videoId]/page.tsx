@@ -7,9 +7,7 @@ interface ParamsProps {
   };
 }
 
-export default async function SummaryCardRoute(props: Readonly<ParamsProps>) {
-  const params = await props?.params;
-//   const { videoId } = params;
+export default async function SummaryCardRoute({ params }: ParamsProps) {
   const data = await getSummaryById(params.videoId);
   return <SummaryCardForm item={data.data} />;
 }

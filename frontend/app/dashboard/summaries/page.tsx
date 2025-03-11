@@ -42,18 +42,18 @@ function LinkCard({ documentId, title, summary }: Readonly<LinkCardProps>) {
 }
 
 interface SearchParamsProps {
-  searchParams?: {
+  searchParams?: Promise<{
     page?: string;
     query?: string;
-  };
+  }>;
 }
 
 export default async function SummariesRoute({
   searchParams,
 }: SearchParamsProps) {
-  const search = await searchParams;
-  const query = search?.query ?? "";
-  const currentPage = Number(search?.page) || 1;
+  const search = searchParams ? await searchParams : {};
+  const query = search.query ?? "";
+  const currentPage = Number(search.page) || 1;
 
   const { data, meta } = await getSummaries(query, currentPage);
   const pageCount = meta?.pagination?.pageCount;

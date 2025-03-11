@@ -1,7 +1,13 @@
 import { getSummaryById } from "@/data/loaders";
 import { SummaryCardForm } from "@/components/forms/SummaryCardForm";
 
-export default async function SummaryCardRoute({ params }: { params: { videoId: string } }) {
+interface ParamsProps {
+  params: {
+    videoId: string;
+  };
+}
+
+export default async function SummaryCardRoute({ params }: ParamsProps) {
   const data = await getSummaryById(params.videoId);
   return <SummaryCardForm item={data.data} />;
 }

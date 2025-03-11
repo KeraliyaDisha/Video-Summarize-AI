@@ -6,7 +6,7 @@ export function cn(...inputs: ClassValue[]) {
 }
 
 export function getStrapiURL() {
-  return process.env.STRAPI_URL ?? "https://delightful-cats-8ed56760d8.strapiapp.com";
+  return process.env.STRAPI_URL ?? "http://localhost:1337";
 }
 
 export function getStrapiMedia(url: string | null) {

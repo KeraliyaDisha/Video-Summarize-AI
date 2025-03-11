@@ -75,7 +75,6 @@ export async function POST(req: NextRequest) {
   const body = await req.json();
   const fullUrl = body.videoId;
   const extractedId = extractYouTubeID(fullUrl);
-  console.log("Extracted ID:", extractedId);
   const url = `https://deserving-harmony-9f5ca04daf.strapiapp.com/utilai/yt-transcript/${extractedId}`;
 
   let transcriptData;
@@ -94,7 +93,6 @@ export async function POST(req: NextRequest) {
 
   try {
     summary = await generateSummary(transcriptData, TEMPLATE);
-    console.log("summery:", summary);
     return new Response(JSON.stringify({ data: summary, error: null }));
   } catch (error) {
     console.error("Error processing request:", error);

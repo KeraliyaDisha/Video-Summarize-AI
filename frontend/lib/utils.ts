@@ -1,12 +1,12 @@
-import { clsx, type ClassValue } from "clsx"
-import { twMerge } from "tailwind-merge"
+import { clsx, type ClassValue } from "clsx";
+import { twMerge } from "tailwind-merge";
 
 export function cn(...inputs: ClassValue[]) {
-  return twMerge(clsx(inputs))
+  return twMerge(clsx(inputs));
 }
 
 export function getStrapiURL() {
-  return process.env.STRAPI_URL ?? "http://localhost:1337";
+  return process.env.STRAPI_URL ?? "https://delightful-cats-8ed56760d8.strapiapp.com";
 }
 
 export function getStrapiMedia(url: string | null) {

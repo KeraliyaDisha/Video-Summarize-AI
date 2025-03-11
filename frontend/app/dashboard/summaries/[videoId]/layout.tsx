@@ -7,7 +7,7 @@ export default async function SummarySingleRoute({
   params,
   children,
 }: {
-  params: { videoId: string }; 
+  params: Promise<{ videoId: string }>;
   readonly children: React.ReactNode;
 }) {
   const { videoId } = await params;
@@ -17,7 +17,6 @@ export default async function SummarySingleRoute({
   if (summaryData.error?.status === 404) return notFound();
 
   const extractedVideoId = extractYouTubeID(summaryData.videoId);
-  
   if (!extractedVideoId) {
     return notFound();
   }
@@ -27,9 +26,7 @@ export default async function SummarySingleRoute({
       <div className="h-full grid gap-4 grid-cols-5 p-4">
         <div className="col-span-3">{children}</div>
         <div className="col-span-2">
-          <div>
-            <YouTubePlayer videoId={extractedVideoId} />
-          </div>
+          <YouTubePlayer videoId={extractedVideoId} />
         </div>
       </div>
     </div>
